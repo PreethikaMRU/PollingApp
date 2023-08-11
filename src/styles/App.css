@@ -1,0 +1,93 @@
+/* FFE227 EB596E 4D375D 121013 &#8801;*/
+
+.App{
+    display: flex;
+    flex-direction: row;
+    background: #4d375d;
+}
+
+.main{
+    width: 100%;
+}
+
+.sidebar{
+    height: 500px;
+    width: 250px;
+}
+
+.button{
+    cursor: pointer;
+    font-family: 'Caveat Brush', cursive;
+    background-color: #ffe227;
+    border: 1px solid #ffe227;
+    border-radius: 5px;
+}
+
+.title{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 70px;
+    color: #ffe227;
+}
+
+.heading{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 40px;
+    color: #121013;
+}
+
+.subheading{
+    font-family: 'Sacramento', cursive;
+    font-size: 35px;
+    color: #eb596e;
+}
+
+.highlight{
+    font-family: 'Sacramento', cursive;
+    font-size: 35px;
+    color: white;
+}
+
+.create-poll-bttn{
+    color: #121013;
+    font-size: 25px;
+    transition: transform 0.25s;
+}
+
+.create-poll-bttn:hover{
+    border: 1px solid #eb596e;
+    background-color: #eb596e;
+    color: #4d375d;
+    transform: scale(1.05);
+}
+
+.backBttn{
+    height: fit-content;
+    color: #4d375d;
+    font-size: 20px;
+}
+
+.backBttn:hover{
+    background-color: #eb596e;
+}
+
+.submit-bttn{
+    height: fit-content;
+    color: #4d375d;
+    font-size: 30px;
+}
+
+.submit-bttn:hover{
+    background-color: #eb596e;
+}
+
+
+
+@media screen and (max-width:700px) {
+    .App{
+        display: block;
+    }
+
+    .sidebar{
+        height: 0;
+    }
+}

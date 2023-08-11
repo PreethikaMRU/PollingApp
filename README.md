@@ -1,3 +1,11 @@
+# About project
+
+This project is created using React.js, Firebase and CSS.
+
+This project Poll-it lets users to create and vote on poll and get to view the results.
+
+Any user can vote on any poll, while an user needs to login to create and view the results of the polls.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

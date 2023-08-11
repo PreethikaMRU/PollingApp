@@ -1,0 +1,123 @@
+.Newpoll{
+    margin: 40px 25px;
+}
+
+.Newpoll-heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:15px;
+    margin-bottom: 62px;
+    padding-top: 15px;
+}
+
+.Newpoll-title{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    color: #ffe227;
+    font-size: 35px;
+}
+
+.form{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.option{
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.option-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+}
+
+.text{
+    display: flex;
+    flex-direction: row;
+}
+
+.error{
+    display: none;
+}
+
+.error-text{
+    margin: 5px;
+    font-family: "Caveat Brush", cursive;
+    color: #FF033E;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.options-heading{
+    width: 130px;
+}
+
+
+.question-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.question{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+
+.input{
+    font-family: "Caveat Brush", cursive;
+    font-size: 28px;
+    padding-left: 5px;
+    color: #121013;
+    border-radius: 5px;
+    border: 1px solid #4D375D;
+    width: 100%;
+}
+
+.submit-container{
+    margin-top: 25px;
+}
+
+.submit{
+    background-color: #eee;
+    pointer-events:none;
+    color: #aaa;
+}
+
+.submit:active{
+    background-color: #4D375D;
+}
+
+@media screen and (max-width:700px) {
+    .Newpoll{
+        padding-top: 40px;
+        margin: 0 25px 40px 25px;
+    }
+
+    .text{
+        flex-direction: column;
+    }
+
+    .question{
+        flex-direction: column;
+    }
+
+    .Newpoll-heading{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .Newpoll-title{
+        text-align: left;
+    }
+}

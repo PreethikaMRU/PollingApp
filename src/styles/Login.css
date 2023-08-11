@@ -1,0 +1,45 @@
+.Login{
+    margin: 40px 25px;
+}
+
+.Login-body{
+    height: 363.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.Login-heading{
+    font-size: 40px;
+    text-align: center;
+}
+
+.signin{
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0 0 6px 1px #999;
+}
+
+.signin:active{
+    transform: scale(0.99);
+    transition: transform 0.25s;
+}
+
+
+.signin:hover{
+    color: #4D375D;
+    background-color: #FFE227;
+}
+
+@media screen and (max-width:700px) {
+    .Login{
+        padding-top: 40px;
+        margin: 0 25px 40px 25px;
+    }
+}

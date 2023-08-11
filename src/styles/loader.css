@@ -1,0 +1,27 @@
+.loading-cont{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+}
+
+.loading{
+    color: #4d374d;
+    width: 150px;
+    height: 150px;
+    border: 25px solid #FFE227;
+    border-top: 25px solid #4d374d;
+    border-radius: 50%;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

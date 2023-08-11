@@ -1,0 +1,74 @@
+.PollPage{
+    margin:40px 25px;
+}
+
+.PollPage-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:15px;
+    margin-bottom: 62px;
+    padding-top: 15px;
+}
+
+.PollPage-heading{
+    width: 100%;
+    margin: 0;
+    color: #FFE227;
+    font-size: 35px;
+}
+
+.PollPage-body{
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PollPage-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    margin-bottom: 35px;
+}
+
+.form-heading{
+    align-self: center;
+}
+
+.radio{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.answer{
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+    padding: 0 5px;
+    margin: 5px 0;
+}
+
+.poll-page-submit{
+    pointer-events: none;
+    color: #aaa;
+    background-color: #eee;
+}
+
+
+@media screen and (max-width:700px) {
+    .PollPage{
+        padding-top: 40px;
+        margin: 0 25px 40px 25px;
+    }
+    .PollPage-header{
+        flex-direction: column;
+        align-items: start;
+    }
+    .PollPage-heading{
+        text-align: left;
+    }
+}
