@@ -30,12 +30,12 @@ const PollPage = () => {
             updateDoc(docRef,{
                 ["Optionselected."+option]:increment(1),
             })
+            alert("Your answer has been submitted!");
         }catch(err){
             alert("There was some error, please try again later!");
         }
         finally{
             navigate("/");
-            alert("Your answer has been submitted!");
         }
     }
 

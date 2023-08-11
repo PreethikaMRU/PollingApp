@@ -82,23 +82,57 @@ const Newpoll = () => {
     }
 
     const handleBlur  = (ele) => {
-        if(ele === "question" && question===""){
-            qerrorRef.current.style.display = "block";
+        if(ele === "question"){
+            if(question===""){
+                qerrorRef.current.style.display = "block";
+                qerrorRef.current.innerHTML = "Please enter a question."
+            }else if(/[^a-z]/.test(question)===true){
+                setQuestion("");
+                qerrorRef.current.style.display = "block";
+                qerrorRef.current.innerHTML = "Text should not contain ',*[]/\\'";
+            }
         }
-        if (ele === "option1" && option1===""){
-            error1Ref.current.style.display="block";
+        if (ele === "option1"){
+            if(option1===""){
+                error1Ref.current.style.display="block";
+                error1Ref.current.innerHTML = "Please enter a valid answer."
+            }else if(/[^a-z]/.test(option1)===true){
+                setOption1("");
+                error1Ref.current.style.display = "block";
+                error1Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
+            }
         }
-        if (ele === "option2" && option2===""){
-            error2Ref.current.style.display="block";
+        if (ele === "option2"){
+            if(option2===""){
+                error2Ref.current.style.display="block";
+                error2Ref.current.innerHTML = "Please enter a valid answer."
+            }else if(/[^a-z]/.test(option2)===true){
+                setOption2("");
+                error2Ref.current.style.display = "block";
+                error2Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
+            }
         }
-        if (ele === "option3" && option3===""){
-            error3Ref.current.style.display="block";
+        if (ele === "option3"){
+            if(option3===""){
+                error3Ref.current.style.display="block";
+                error3Ref.current.innerHTML = "Please enter a valid answer."
+            }else if(/[^a-z]/.test(option3)===true){
+                setOption3("");
+                error3Ref.current.style.display = "block";
+                error3Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
+            }
         }
-        if (ele === "option4" && option4===""){
-            error4Ref.current.style.display="block";
+        if (ele === "option4"){
+            if(option4===""){
+                error4Ref.current.style.display="block";
+                error4Ref.current.innerHTML = "Please enter a valid answer."
+            }else if(/[^a-z]/.test(option4)===true){
+                setOption4("");
+                error4Ref.current.style.display = "block";
+                error4Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
+            }
         }
     }
-
 
     return(
         <div className="Newpoll">
@@ -112,9 +146,7 @@ const Newpoll = () => {
                         <label htmlFor="question" className="subheading">Question:</label>
                         <input name="question" type="text" value={question} onChange={(e)=>{setQuestion(e.target.value)}} className="input" placeholder="Enter Question" onBlur={()=>handleBlur("question")}></input>
                     </div>
-                    <div className="error" ref={qerrorRef}>
-                            <h5 className="error-text">Please enter a valid question.</h5>
-                    </div>
+                    <h5 className="error-text error" ref={qerrorRef}>error</h5>
                 </div>
 
                 <h5 className="option subheading">Options:</h5>
@@ -125,36 +157,28 @@ const Newpoll = () => {
                             <label htmlFor="1" className="options-heading subheading">First:</label>
                             <input name="1" id="1" type="text" value={option1} onChange={(e)=>setOption1(e.target.value)} className="input" placeholder="Enter First Option" onBlur={()=>handleBlur("option1")}></input>
                         </div>
-                        <div className="error" ref={error1Ref}>
-                            <h5 className="error-text">Please enter a valid option.</h5>
-                        </div>
+                        <h5 className="error-text error" ref={error1Ref}>error</h5>
                     </div>
                     <div className="options">
                         <div className="text">
                             <label htmlFor="2" className="options-heading subheading">Second:</label>
                             <input name="2" id="2" type="text" value={option2} onChange={(e)=>setOption2(e.target.value)} className="input" placeholder="Enter Second Option" onBlur={()=>handleBlur("option2")}></input>
                         </div>
-                        <div className="error" ref={error2Ref}>
-                            <h5 className="error-text">Please enter a valid option.</h5>
-                        </div>
+                        <h5 className="error-text error" ref={error2Ref}>error</h5>
                     </div>
                     <div className="options">
                         <div className="text">
                             <label htmlFor="3" className="options-heading subheading">Third:</label>
                             <input name="3" id="3" type="text" value={option3} onChange={(e)=>setOption3(e.target.value)} className="input" placeholder="Enter Third Option" onBlur={()=>handleBlur("option3")}></input>
                         </div>
-                        <div className="error" ref={error3Ref}>
-                            <h5 className="error-text">Please enter a valid option.</h5>
-                        </div>
+                        <h5 className="error-text error" ref={error3Ref}>error</h5>
                     </div>
                     <div className="options">
                         <div className="text">
                             <label htmlFor="4" className="options-heading subheading">Fourth:</label>
                             <input name="4" id="4" type="text" value={option4} onChange={(e)=>setOption4(e.target.value)} className="input" placeholder="Enter Fourth Option" onBlur={()=>handleBlur("option4")}></input>
                         </div>
-                        <div className="error" ref={error4Ref}>
-                            <h5 className="error-text">Please enter a valid option.</h5>
-                        </div>
+                        <h5 className="error-text error" ref={error4Ref}>error</h5>
                     </div>
                 </div>
                 <div className="submit-container">

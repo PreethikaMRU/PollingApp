@@ -1,5 +1,7 @@
 .Newpoll{
-    margin: 40px 25px;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 15px;
 }
 
 .Newpoll-heading{
