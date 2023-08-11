@@ -23,7 +23,7 @@ function App() {
       <div className='main'>
         <main>
           <Routes>
-            <Route path="/" element={<Home></Home>} />
+            <Route path="PollingApp/" element={<Home></Home>} />
             <Route path="/Login" element={<Login user={user}></Login>} />
             <Route path="/Dashboard" element={<Dashboard user={user}></Dashboard>}>
               <Route path="Report/:id" element={<Report></Report>} />
