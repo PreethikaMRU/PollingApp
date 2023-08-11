@@ -50,19 +50,22 @@ const Newpoll = () => {
 
     const submitPoll = async() => {
         try{
-        const collectionRef = collection(db,"Poll");
-        const d = await addDoc(collectionRef,{
-            Answer:[option1,option2,option3,option4],
-            Question:question,
-            Creator:user.uid,
-            Optionselected:{[option1]:0,[option2]:0,[option3]:0,[option4]:0},
-        })
-        const docRef = doc(db,"User",user.email);
-        await addDoc(collection(docRef,"Pollscreated"),{
-            PollID:d.id,
-            Question:question
-        })
-        alert(`Your poll ${question} has been created successfully!`);
+            submitRef.current.style.backgroundColor = "#eee";
+            submitRef.current.style.pointerEvents = "none";
+            submitRef.current.style.color = "#aaa";
+            const collectionRef = collection(db,"Poll");
+            const d = await addDoc(collectionRef,{
+                Answer:[option1,option2,option3,option4],
+                Question:question,
+                Creator:user.uid,
+                Optionselected:{[option1]:0,[option2]:0,[option3]:0,[option4]:0},
+            })
+            const docRef = doc(db,"User",user.email);
+            await addDoc(collection(docRef,"Pollscreated"),{
+                PollID:d.id,
+                Question:question
+            })
+            alert(`Your poll ${question} has been created successfully!`);
         }
         catch(err){
             alert("Sorry there was some error, please try again later");
@@ -86,7 +89,7 @@ const Newpoll = () => {
             if(question===""){
                 qerrorRef.current.style.display = "block";
                 qerrorRef.current.innerHTML = "Please enter a question."
-            }else if(/[^a-z]/.test(question)===true){
+            }else if(/[^a-zA-Z0-9?\s]/.test(question)===true){
                 setQuestion("");
                 qerrorRef.current.style.display = "block";
                 qerrorRef.current.innerHTML = "Text should not contain ',*[]/\\'";
@@ -96,7 +99,7 @@ const Newpoll = () => {
             if(option1===""){
                 error1Ref.current.style.display="block";
                 error1Ref.current.innerHTML = "Please enter a valid answer."
-            }else if(/[^a-z]/.test(option1)===true){
+            }else if(/[^a-zA-Z0-9?\s]/.test(option1)===true){
                 setOption1("");
                 error1Ref.current.style.display = "block";
                 error1Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
@@ -106,7 +109,7 @@ const Newpoll = () => {
             if(option2===""){
                 error2Ref.current.style.display="block";
                 error2Ref.current.innerHTML = "Please enter a valid answer."
-            }else if(/[^a-z]/.test(option2)===true){
+            }else if(/[^a-zA-Z0-9?\s]/.test(option2)===true){
                 setOption2("");
                 error2Ref.current.style.display = "block";
                 error2Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
@@ -116,7 +119,7 @@ const Newpoll = () => {
             if(option3===""){
                 error3Ref.current.style.display="block";
                 error3Ref.current.innerHTML = "Please enter a valid answer."
-            }else if(/[^a-z]/.test(option3)===true){
+            }else if(/[^a-zA-Z0-9?\s]/.test(option3)===true){
                 setOption3("");
                 error3Ref.current.style.display = "block";
                 error3Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
@@ -126,7 +129,7 @@ const Newpoll = () => {
             if(option4===""){
                 error4Ref.current.style.display="block";
                 error4Ref.current.innerHTML = "Please enter a valid answer."
-            }else if(/[^a-z]/.test(option4)===true){
+            }else if(/[^a-zA-Z0-9?\s]/.test(option4)===true){
                 setOption4("");
                 error4Ref.current.style.display = "block";
                 error4Ref.current.innerHTML = "Text should not contain ',*[]/\\'";
@@ -144,7 +147,7 @@ const Newpoll = () => {
                 <div className="question-container">
                     <div className="question">
                         <label htmlFor="question" className="subheading">Question:</label>
-                        <input name="question" type="text" value={question} onChange={(e)=>{setQuestion(e.target.value)}} className="input" placeholder="Enter Question" onBlur={()=>handleBlur("question")}></input>
+                        <input name="question" type="text" value={question} onChange={(e)=>{setQuestion(e.target.value.trimStart())}} className="input" placeholder="Enter Question" onBlur={()=>handleBlur("question")}></input>
                     </div>
                     <h5 className="error-text error" ref={qerrorRef}>error</h5>
                 </div>
@@ -155,28 +158,28 @@ const Newpoll = () => {
                     <div className="options">
                         <div className="text">
                             <label htmlFor="1" className="options-heading subheading">First:</label>
-                            <input name="1" id="1" type="text" value={option1} onChange={(e)=>setOption1(e.target.value)} className="input" placeholder="Enter First Option" onBlur={()=>handleBlur("option1")}></input>
+                            <input name="1" id="1" type="text" value={option1} onChange={(e)=>setOption1(e.target.value.trimStart())} className="input" placeholder="Enter First Option" onBlur={()=>handleBlur("option1")}></input>
                         </div>
                         <h5 className="error-text error" ref={error1Ref}>error</h5>
                     </div>
                     <div className="options">
                         <div className="text">
                             <label htmlFor="2" className="options-heading subheading">Second:</label>
-                            <input name="2" id="2" type="text" value={option2} onChange={(e)=>setOption2(e.target.value)} className="input" placeholder="Enter Second Option" onBlur={()=>handleBlur("option2")}></input>
+                            <input name="2" id="2" type="text" value={option2} onChange={(e)=>setOption2(e.target.value.trimStart())} className="input" placeholder="Enter Second Option" onBlur={()=>handleBlur("option2")}></input>
                         </div>
                         <h5 className="error-text error" ref={error2Ref}>error</h5>
                     </div>
                     <div className="options">
                         <div className="text">
                             <label htmlFor="3" className="options-heading subheading">Third:</label>
-                            <input name="3" id="3" type="text" value={option3} onChange={(e)=>setOption3(e.target.value)} className="input" placeholder="Enter Third Option" onBlur={()=>handleBlur("option3")}></input>
+                            <input name="3" id="3" type="text" value={option3} onChange={(e)=>setOption3(e.target.value.trimStart())} className="input" placeholder="Enter Third Option" onBlur={()=>handleBlur("option3")}></input>
                         </div>
                         <h5 className="error-text error" ref={error3Ref}>error</h5>
                     </div>
                     <div className="options">
                         <div className="text">
                             <label htmlFor="4" className="options-heading subheading">Fourth:</label>
-                            <input name="4" id="4" type="text" value={option4} onChange={(e)=>setOption4(e.target.value)} className="input" placeholder="Enter Fourth Option" onBlur={()=>handleBlur("option4")}></input>
+                            <input name="4" id="4" type="text" value={option4} onChange={(e)=>setOption4(e.target.value.trimStart())} className="input" placeholder="Enter Fourth Option" onBlur={()=>handleBlur("option4")}></input>
                         </div>
                         <h5 className="error-text error" ref={error4Ref}>error</h5>
                     </div>
