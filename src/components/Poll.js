@@ -24,7 +24,7 @@ const Poll = ({poll}) => {
             <div className="Poll-qs-cont">
                 <h5 className="Poll-qs heading">{poll.Question}</h5>
             </div>
-            <Link to={`Poll/${poll.id}`} className="Poll-link-cont subheading" onMouseEnter={handleHover} onMouseLeave={removeHover} onClick={handleLink}>
+            <Link to={`/PollingApp/Poll/${poll.id}`} className="Poll-link-cont subheading" onMouseEnter={handleHover} onMouseLeave={removeHover} onClick={handleLink}>
                 <h5 className="Poll-link">{`Vote now >>>`}</h5>
             </Link>
         </div>

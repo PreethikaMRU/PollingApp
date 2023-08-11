@@ -37,7 +37,7 @@ const Dashboard = () => {
     },[user])
 
     const handleBttn = () =>{
-        navigate("/");
+        navigate("/PollingApp");
     }
 
     return(
@@ -46,7 +46,7 @@ const Dashboard = () => {
                 <button className="backBttn button" onClick={handleBttn}>Back</button>
                 <h5 className="dashboard-heading heading">DASHBOARD</h5>
             </div>
-            <Link to="/Newpoll"><button className="create-poll-bttn button">+ Create new poll</button></Link>
+            <Link to="/PollingApp/Newpoll"><button className="create-poll-bttn button">+ Create new poll</button></Link>
             {empty===false?
             <div className="dashboard-body">
                 {polls.length!==0?
@@ -56,7 +56,7 @@ const Dashboard = () => {
                         <div className="Poll-list-cont">
                             {polls.map((poll) => {
                             return(
-                                <Link to={`Report/${poll.PollID}`} key={poll.PollID} className="dashboard-poll-link heading">
+                                <Link to={`/PollingApp/Report/${poll.PollID}`} key={poll.PollID} className="dashboard-poll-link heading">
                                     <span className="dashboard-poll">{poll.Question}</span>
                                 </Link>)
                             })}

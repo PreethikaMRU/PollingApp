@@ -27,7 +27,7 @@ function Home(){
     return(
         <div className="Home">
             <h5 className="home-title title">POLL-iT</h5>
-            {user? <Link to="/Newpoll"><button className="create-poll-bttn button">+ Create your new poll</button></Link>:<h5 className="home-highlight highlight">Log in to create your poll!</h5>}
+            {user? <Link to="/PollingApp/Newpoll"><button className="create-poll-bttn button">+ Create your new poll</button></Link>:<h5 className="home-highlight highlight">Log in to create your poll!</h5>}
             {polls.length!==0?
             <div className="Poll-list-cont">
                 <div className="Poll-item">

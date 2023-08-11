@@ -9,7 +9,7 @@ const Login = ({user}) => {
     
     const timeOut = setTimeout(()=>{
         if(user){
-            navigate("/Loggedin");
+            navigate("/PollingApp/Loggedin");
         }
         else{
         }
@@ -19,7 +19,7 @@ const Login = ({user}) => {
         try{
             const provider = new GoogleAuthProvider();
             signInWithRedirect(auth,provider);
-            navigate("/Loggedin")
+            navigate("/PollingApp/Loggedin")
         }
         catch{}
         finally{

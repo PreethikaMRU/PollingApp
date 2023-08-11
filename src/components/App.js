@@ -23,14 +23,14 @@ function App() {
       <div className='main'>
         <main>
           <Routes>
-            <Route path="/" element={<Home></Home>} />
-            <Route path="/Login" element={<Login user={user}></Login>} />
-            <Route path="/Dashboard" element={<Dashboard user={user}></Dashboard>}>
-              <Route path="Report/:id" element={<Report></Report>} />
+            <Route path="/PollingApp" element={<Home></Home>} />
+            <Route path="/PollingApp/Login" element={<Login user={user}></Login>} />
+            <Route path="/PollingApp/Dashboard" element={<Dashboard user={user}></Dashboard>}>
+              <Route path="/PollingApp/Report/:id" element={<Report></Report>} />
             </Route>
-            <Route path='Poll/:id' element={<PollPage></PollPage>}/>
-            <Route path='/Newpoll' element={<Newpoll></Newpoll>}/>
-            <Route path='/Loggedin' element={<Loggedin user={user}></Loggedin>}/>
+            <Route path='/PollingApp/Poll/:id' element={<PollPage></PollPage>}/>
+            <Route path='/PollingApp/Newpoll' element={<Newpoll></Newpoll>}/>
+            <Route path='/PollingApp/Loggedin' element={<Loggedin user={user}></Loggedin>}/>
           </Routes>
         </main>
         <Footer></Footer>
