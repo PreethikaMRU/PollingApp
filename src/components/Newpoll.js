@@ -73,12 +73,12 @@ const Newpoll = () => {
             setOption2("");
             setOption3("");
             setOption4("");
-            navigate("/PollingApp");
+            navigate("/");
         }
     }
 
     const handleBack = () => {
-        navigate("/PollingApp");
+        navigate("/");
     }
 
     const handleBlur  = (ele) => {

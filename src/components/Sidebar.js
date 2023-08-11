@@ -60,9 +60,9 @@ const Sidebar = () => {
             <div className="Sidebar-lg">
                 <img src={logo} alt="Logo" className="Sidebar-logo"></img>
                 <div className="Sidebar-link-cont">
-                    <Link to="/PollingApp" className="Sidebar-links">Home</Link>
-                    {user? <Link to="/PollingApp/Dashboard" className="Sidebar-links">Dashboard</Link>:""}
-                    {user? <Link to="/PollingApp" className="Sidebar-links" onClick={handleLogout}>Logout</Link>:<Link to="/PollingApp/Login" className="Sidebar-links">Login</Link>}
+                    <Link to="/" className="Sidebar-links">Home</Link>
+                    {user? <Link to="/Dashboard" className="Sidebar-links">Dashboard</Link>:""}
+                    {user? <Link to="/" className="Sidebar-links" onClick={handleLogout}>Logout</Link>:<Link to="/Login" className="Sidebar-links">Login</Link>}
                 </div>
             </div>
             <div className="Sidebar-sm">
@@ -76,9 +76,9 @@ const Sidebar = () => {
                 <div className="Sidebar-container" ref={sidebarRef}>
                     <img src={logo} alt="Logo" className="Sidebar-logo"></img>
                     <div className="Sidebar-link-cont">
-                        <Link to="/PollingApp" className="Sidebar-links" onClick={handleButton}>Home</Link>
-                        {user? <Link to="/PollingApp/Dashboard" className="Sidebar-links" onClick={handleButton}>Dashboard</Link>:""}
-                        {user? <Link to="/PollingApp" className="Sidebar-links" onClick={handleLogout}>Logout</Link>:<Link to="/PollingApp/Login" className="Sidebar-links" onClick={handleButton}>Login</Link>}
+                        <Link to="/" className="Sidebar-links" onClick={handleButton}>Home</Link>
+                        {user? <Link to="/Dashboard" className="Sidebar-links" onClick={handleButton}>Dashboard</Link>:""}
+                        {user? <Link to="/" className="Sidebar-links" onClick={handleLogout}>Logout</Link>:<Link to="/Login" className="Sidebar-links" onClick={handleButton}>Login</Link>}
                     </div>
                 </div>
             </div>

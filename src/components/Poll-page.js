@@ -34,13 +34,13 @@ const PollPage = () => {
             alert("There was some error, please try again later!");
         }
         finally{
-            navigate("/PollingApp");
+            navigate("/");
             alert("Your answer has been submitted!");
         }
     }
 
     const handleBack = () => {
-        navigate("/PollingApp");
+        navigate("/");
     }
     const ans =poll.Answer;
     return(

@@ -8,7 +8,7 @@ const Loggedin = ({user}) => {
     setTimeout(()=>{
         if(user){
             checkUser();
-            navigate("/PollingApp");
+            navigate("/");
         }
         else{
         }
@@ -24,7 +24,7 @@ const Loggedin = ({user}) => {
                     })
         }
     }
-    navigate("/PollingApp/Login");
+    navigate("/Login");
     return(
         <div className="Loggedin">
             <h5 className="highlight">Please wait redirecting!</h5>
